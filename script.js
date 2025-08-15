@@ -37,115 +37,8 @@ setInterval(updateCountdown, 1000);
 // Inicializar la cuenta regresiva inmediatamente
 updateCountdown();
 
-// Manejo del formulario RSVP
+// Inicialización de funciones principales
 document.addEventListener('DOMContentLoaded', function() {
-    const rsvpForm = document.getElementById('rsvpForm');
-    const attendanceSelect = document.getElementById('attendance');
-    const guestCountGroup = document.getElementById('guestCountGroup');
-    const rsvpSuccess = document.getElementById('rsvpSuccess');
-
-    // Mostrar/ocultar el selector de número de invitados
-    attendanceSelect.addEventListener('change', function() {
-        if (this.value === 'si') {
-            guestCountGroup.style.display = 'block';
-            guestCountGroup.classList.add('fade-in-up');
-        } else {
-            guestCountGroup.style.display = 'none';
-        }
-    });
-
-    // Manejo del envío del formulario
-    rsvpForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Obtener los datos del formulario
-        const formData = new FormData(rsvpForm);
-        const rsvpData = {
-            name: formData.get('guestName'),
-            email: formData.get('guestEmail'),
-            phone: formData.get('guestPhone'),
-            attendance: formData.get('attendance'),
-            guestCount: formData.get('guestCount') || '1',
-            message: formData.get('message'),
-            timestamp: new Date().toISOString()
-        };
-
-        // Guardar en localStorage (en un proyecto real, esto se enviaría a un servidor)
-        saveRSVP(rsvpData);
-        
-        // Mostrar mensaje de éxito
-        showSuccessMessage();
-        
-        // Resetear el formulario
-        rsvpForm.reset();
-        guestCountGroup.style.display = 'none';
-    });
-
-    // Función para guardar RSVP
-    function saveRSVP(data) {
-        let rsvps = JSON.parse(localStorage.getItem('weddingRSVPs')) || [];
-        rsvps.push(data);
-        localStorage.setItem('weddingRSVPs', JSON.stringify(rsvps));
-        
-        // En un proyecto real, aquí harías una petición AJAX al servidor
-        console.log('RSVP guardado:', data);
-    }
-
-    // Función para mostrar mensaje de éxito
-    function showSuccessMessage() {
-        rsvpForm.style.display = 'none';
-        rsvpSuccess.style.display = 'block';
-        rsvpSuccess.classList.add('fade-in-up');
-        
-        // Scroll suave hacia el mensaje de éxito
-        rsvpSuccess.scrollIntoView({ 
-            behavior: 'smooth', 
-            block: 'center' 
-        });
-        
-        // Ocultar el mensaje después de 5 segundos y mostrar el formulario de nuevo
-        setTimeout(() => {
-            rsvpSuccess.style.display = 'none';
-            rsvpForm.style.display = 'block';
-        }, 5000);
-    }
-
-    // Validación en tiempo real
-    const requiredFields = ['guestName', 'guestEmail', 'attendance'];
-    
-    requiredFields.forEach(fieldName => {
-        const field = document.getElementById(fieldName);
-        field.addEventListener('blur', validateField);
-        field.addEventListener('input', validateField);
-    });
-
-    function validateField(e) {
-        const field = e.target;
-        const value = field.value.trim();
-        
-        // Remover clases de validación previas
-        field.classList.remove('invalid', 'valid');
-        
-        // Validar según el tipo de campo
-        let isValid = false;
-        
-        switch(field.type) {
-            case 'email':
-                isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-                break;
-            case 'text':
-                isValid = value.length >= 2;
-                break;
-            case 'select-one':
-                isValid = value !== '';
-                break;
-            default:
-                isValid = value !== '';
-        }
-        
-        // Aplicar clase CSS según validación
-        field.classList.add(isValid ? 'valid' : 'invalid');
-    }
 
     // Animaciones de scroll
     const observerOptions = {
@@ -246,49 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     }
 
-    // Función para obtener los RSVPs guardados (para vista administrativa)
-    function getRSVPs() {
-        return JSON.parse(localStorage.getItem('weddingRSVPs')) || [];
-    }
 
-    // Función para ver estadísticas (accessible desde la consola)
-    window.getWeddingStats = function() {
-        const rsvps = getRSVPs();
-        const stats = {
-            total: rsvps.length,
-            attending: rsvps.filter(r => r.attendance === 'si').length,
-            notAttending: rsvps.filter(r => r.attendance === 'no').length,
-            totalGuests: rsvps
-                .filter(r => r.attendance === 'si')
-                .reduce((sum, r) => sum + parseInt(r.guestCount || 1), 0)
-        };
-        
-        console.log('📊 Estadísticas de la boda:');
-        console.log(`Total de respuestas: ${stats.total}`);
-        console.log(`Confirmaron asistencia: ${stats.attending}`);
-        console.log(`No pueden asistir: ${stats.notAttending}`);
-        console.log(`Total de invitados que asistirán: ${stats.totalGuests}`);
-        
-        return stats;
-    };
-
-    // Función para exportar RSVPs (accessible desde la consola)
-    window.exportRSVPs = function() {
-        const rsvps = getRSVPs();
-        const csvContent = "data:text/csv;charset=utf-8," + 
-            "Nombre,Email,Teléfono,Asistencia,Número de invitados,Mensaje,Fecha de confirmación\n" +
-            rsvps.map(r => 
-                `"${r.name}","${r.email}","${r.phone || ''}","${r.attendance}","${r.guestCount || '1'}","${r.message || ''}","${new Date(r.timestamp).toLocaleString()}"`
-            ).join("\n");
-        
-        const encodedUri = encodeURI(csvContent);
-        const link = document.createElement("a");
-        link.setAttribute("href", encodedUri);
-        link.setAttribute("download", "confirmaciones_boda.csv");
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
 
     // ===== CARRUSEL DE FOTOS =====
     
@@ -547,10 +398,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     console.log('🎉 Invitación de boda cargada correctamente!');
-    console.log('💡 Usa getWeddingStats() para ver estadísticas');
-    console.log('📁 Usa exportRSVPs() para descargar confirmaciones');
     console.log('🎠 Carrusel inicializado con autoplay');
     console.log('👆 Usa las flechas del teclado para navegar en el carrusel');
+    console.log('📱 Confirmaciones via WhatsApp configuradas');
 });
 
 // Efectos de partículas para el fondo (opcional)
