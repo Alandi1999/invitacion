@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Boda - Mirko</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <!-- Overlay de carga -->
+    <div id="loader" class="loader">
+        <div class="wedding-rings">
+            <i class="fas fa-heart"></i>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div id="main-content" class="main-content">
+        <!-- Sección de bienvenida -->
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="wedding-date">
+                    <span class="day">Sábado</span>
+                    <span class="date">10 de Enero, 2026</span>
+                </div>
+                <h1 class="couple-names">
+                    <span class="name1">Mely</span>
+                    <span class="ampersand">&</span>
+                    <span class="name2">Rodri</span>
+                </h1>
+                <p class="bible-quote">"Uno puede ser vencido, pero juntos de la mano podemos resistir a todo"</p>
+                <p class="bible-reference">Eclesiastes 4:12</p>
+                <p class="invitation-text">Nos complace invitarte a celebrar nuestro amor</p>
+                <div class="ornament">
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carrusel de fotos -->
+        <section class="carousel-section">
+            <div class="container">
+                <h2 class="section-title">Nuestros Momentos</h2>
+                <div class="carousel-container">
+                    <div class="carousel" id="photoCarousel">
+                        <div class="carousel-item active">
+                            <img src="img/DSC00431.webp" alt="Foto 1" loading="lazy">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/DSC00448.webp" alt="Foto 2" loading="lazy">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/DSC00476.webp" alt="Foto 3" loading="lazy">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/DSC00495.webp" alt="Foto 4" loading="lazy">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/DSC00508.webp" alt="Foto 5" loading="lazy">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/DSC00526.webp" alt="Foto 6" loading="lazy">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/DSC00582.webp" alt="Foto 7" loading="lazy">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/DSC00591.webp" alt="Foto 8" loading="lazy">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/DSC00595.webp" alt="Foto 9" loading="lazy">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/DSC00611.webp" alt="Foto 10" loading="lazy">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/DSC00612.webp" alt="Foto 11" loading="lazy">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/DSC00615.webp" alt="Foto 12" loading="lazy">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/DSC00618.webp" alt="Foto 13" loading="lazy">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/DSC00624.webp" alt="Foto 14" loading="lazy">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/DSC00644.webp" alt="Foto 15" loading="lazy">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/DSC00647.webp" alt="Foto 16" loading="lazy">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/DSC00651.webp" alt="Foto 17" loading="lazy">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/DSC00652.webp" alt="Foto 18" loading="lazy">
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev" onclick="previousSlide()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" onclick="nextSlide()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="carousel-indicators">
+                        <span class="indicator active" onclick="currentSlide(1)"></span>
+                        <span class="indicator" onclick="currentSlide(2)"></span>
+                        <span class="indicator" onclick="currentSlide(3)"></span>
+                        <span class="indicator" onclick="currentSlide(4)"></span>
+                        <span class="indicator" onclick="currentSlide(5)"></span>
+                        <span class="indicator" onclick="currentSlide(6)"></span>
+                        <span class="indicator" onclick="currentSlide(7)"></span>
+                        <span class="indicator" onclick="currentSlide(8)"></span>
+                        <span class="indicator" onclick="currentSlide(9)"></span>
+                        <span class="indicator" onclick="currentSlide(10)"></span>
+                        <span class="indicator" onclick="currentSlide(11)"></span>
+                        <span class="indicator" onclick="currentSlide(12)"></span>
+                        <span class="indicator" onclick="currentSlide(13)"></span>
+                        <span class="indicator" onclick="currentSlide(14)"></span>
+                        <span class="indicator" onclick="currentSlide(15)"></span>
+                        <span class="indicator" onclick="currentSlide(16)"></span>
+                        <span class="indicator" onclick="currentSlide(17)"></span>
+                        <span class="indicator" onclick="currentSlide(18)"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cuenta regresiva -->
+        <section class="countdown-section">
+            <div class="container">
+                <h2 class="section-title">Faltan</h2>
+                <div class="countdown" id="countdown">
+                    <div class="time-unit">
+                        <span class="time-number" id="days">00</span>
+                        <span class="time-label">Días</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-number" id="hours">00</span>
+                        <span class="time-label">Horas</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-number" id="minutes">00</span>
+                        <span class="time-label">Minutos</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-number" id="seconds">00</span>
+                        <span class="time-label">Segundos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detalles del evento -->
+        <section class="details-section">
+            <div class="container">
+                <h2 class="section-title">Detalles del Evento</h2>
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <i class="fas fa-calendar-alt detail-icon"></i>
+                        <h3>Fecha</h3>
+                        <p>Sábado 10 de Enero<br>2026</p>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fas fa-church detail-icon"></i>
+                        <h3>Ceremonia</h3>
+                        <p>21:30 hs<br>Iglesia Nuestra Señora de Loreto</p>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fas fa-glass-cheers detail-icon"></i>
+                        <h3>Recepción</h3>
+                        <p>23:00 hs<br>Rumbo Eventos</p>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fas fa-tshirt detail-icon"></i>
+                        <h3>Dress Code</h3>
+                        <p>Cóctel</p>
+                    </div>
+                </div>
+          </div>
+        </section>
+
+        <!-- Direcciones -->
+        <section class="directions-section">
+            <div class="container">
+                <h2 class="section-title">Direcciones</h2>
+                <div class="directions-grid">
+                    <div class="direction-card">
+                        <i class="fas fa-church direction-icon"></i>
+                        <h3>Ceremonia</h3>
+                        <p class="location-name">Iglesia Nuestra Señora de Loreto</p>
+                        <p class="location-address">Eduardo Miguel frente a la plaza principal</p>
+                    </div>
+                    <div class="direction-card">
+                        <i class="fas fa-glass-cheers direction-icon"></i>
+                        <h3>Recepción</h3>
+                        <p class="location-name">Rumbo Eventos</p>
+                        <p class="location-address">Juan Bautista Alberdi</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Información de regalos -->
+        <section class="gifts-section">
+            <div class="container">
+                <h2 class="section-title">Regalos</h2>
+                <div class="gifts-content">
+                    <p class="gifts-text">
+                        No tenemos lista de regalos, pero si deseas hacernos un presente, 
+                        te agradeceríamos que sea en dinero. El valor de la tarjeta es de $20.000.
+                    </p>
+                    <div class="gifts-info">
+                        <div class="gift-card">
+                            <i class="fas fa-credit-card gift-icon"></i>
+                            <h3>Tarjeta de invitación</h3>
+                            <p class="gift-amount">$20.000</p>
+                            <p class="gift-note">Mismo lugar de la fiesta</p>
+            </div>
+            </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Botón de confirmación -->
+        <section class="confirmation-section">
+            <div class="container">
+                <h2 class="section-title">Confirmación</h2>
+                <p class="confirmation-text">
+                    Tu presencia es muy importante para nosotros.<br>
+                    Por favor, confirma tu asistencia antes del 1 de Enero 2026.
+                </p>
+                <a href="https://wa.me/5491123456789?text=Hola! Confirmo mi asistencia a la boda de Mely y Rodri el 10 de Enero 2026" 
+                   class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    Confirmar por WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>Con amor, Mely & Rodri</p>
+                <div class="heart-decoration">
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal para carrusel grande -->
+    <div id="photoModal" class="photo-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-carousel">
+                <div class="modal-carousel-item active">
+                    <img src="img/DSC00431.webp" alt="Foto 1">
+                </div>
+                <div class="modal-carousel-item">
+                    <img src="img/DSC00448.webp" alt="Foto 2">
+                </div>
+                <div class="modal-carousel-item">
+                    <img src="img/DSC00476.webp" alt="Foto 3">
+                </div>
+                <div class="modal-carousel-item">
+                    <img src="img/DSC00495.webp" alt="Foto 4">
+                </div>
+                <div class="modal-carousel-item">
+                    <img src="img/DSC00508.webp" alt="Foto 5">
+                </div>
+                <div class="modal-carousel-item">
+                    <img src="img/DSC00526.webp" alt="Foto 6">
+                </div>
+                <div class="modal-carousel-item">
+                    <img src="img/DSC00582.webp" alt="Foto 7">
+                </div>
+                <div class="modal-carousel-item">
+                    <img src="img/DSC00591.webp" alt="Foto 8">
+                </div>
+                <div class="modal-carousel-item">
+                    <img src="img/DSC00595.webp" alt="Foto 9">
+                </div>
+                <div class="modal-carousel-item">
+                    <img src="img/DSC00611.webp" alt="Foto 10">
+                </div>
+                <div class="modal-carousel-item">
+                    <img src="img/DSC00612.webp" alt="Foto 11">
+                </div>
+                <div class="modal-carousel-item">
+                    <img src="img/DSC00615.webp" alt="Foto 12">
+                </div>
+                <div class="modal-carousel-item">
+                    <img src="img/DSC00618.webp" alt="Foto 13">
+                </div>
+                <div class="modal-carousel-item">
+                    <img src="img/DSC00624.webp" alt="Foto 14">
+                </div>
+                <div class="modal-carousel-item">
+                    <img src="img/DSC00644.webp" alt="Foto 15">
+                </div>
+                <div class="modal-carousel-item">
+                    <img src="img/DSC00647.webp" alt="Foto 16">
+                </div>
+                <div class="modal-carousel-item">
+                    <img src="img/DSC00651.webp" alt="Foto 17">
+                </div>
+                <div class="modal-carousel-item">
+                    <img src="img/DSC00652.webp" alt="Foto 18">
+                </div>
+            </div>
+            <button class="modal-btn prev" onclick="modalPreviousSlide()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="modal-btn next" onclick="modalNextSlide()">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="modal-indicators">
+                <span class="modal-indicator active" onclick="modalCurrentSlide(1)"></span>
+                <span class="modal-indicator" onclick="modalCurrentSlide(2)"></span>
+                <span class="modal-indicator" onclick="modalCurrentSlide(3)"></span>
+                <span class="modal-indicator" onclick="modalCurrentSlide(4)"></span>
+                <span class="modal-indicator" onclick="modalCurrentSlide(5)"></span>
+                <span class="modal-indicator" onclick="modalCurrentSlide(6)"></span>
+                <span class="modal-indicator" onclick="modalCurrentSlide(7)"></span>
+                <span class="modal-indicator" onclick="modalCurrentSlide(8)"></span>
+                <span class="modal-indicator" onclick="modalCurrentSlide(9)"></span>
+                <span class="modal-indicator" onclick="modalCurrentSlide(10)"></span>
+                <span class="modal-indicator" onclick="modalCurrentSlide(11)"></span>
+                <span class="modal-indicator" onclick="modalCurrentSlide(12)"></span>
+                <span class="modal-indicator" onclick="modalCurrentSlide(13)"></span>
+                <span class="modal-indicator" onclick="modalCurrentSlide(14)"></span>
+                <span class="modal-indicator" onclick="modalCurrentSlide(15)"></span>
+                <span class="modal-indicator" onclick="modalCurrentSlide(16)"></span>
+                <span class="modal-indicator" onclick="modalCurrentSlide(17)"></span>
+                <span class="modal-indicator" onclick="modalCurrentSlide(18)"></span>
+            </div>
+            <div class="photo-counter">
+                <span id="currentPhoto">1</span> / <span id="totalPhotos">18</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
